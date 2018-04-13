@@ -2,7 +2,7 @@ lmc_assign_keyboard('MACROS')
 
 sendToAHK = function (key)
       --print('It was assigned string:    ' .. key)
-      local file = io.open("C:\\Users\\TaranWORK\\Documents\\GitHub\\2nd-keyboard-master\\LUAMACROS\\keypressed.txt", "w") -- writing this string to a text file on disk is probably NOT the best method. Feel free to program something better!
+      local file = io.open("C:\\Users\\mattl\\Documents\\GitHub\\2nd-keyboards\\keypressed.txt", "w") -- writing this string to a text file on disk is probably NOT the best method. Feel free to program something better!
       --Make sure to substitute the path that leads to your own "keypressed.txt" file, using the double backslashes.
 	  --print("we are inside the text file")
       file:write(key)
@@ -47,7 +47,7 @@ local config = {
 
 lmc_set_handler('MACROS', function(button, direction)
 	--Ignoring upstrokes ensures keystrokes are not registered twice, but activates faster than ignoring downstrokes. It also allows press and hold behaviour
-        if (direction == 0) then return end -- ignore key upstrokes. 
+        if (direction == 0) then return end -- ignore key upstrokes.
 	if type(config[button]) == "string" then
                 print(' ')
                 print('Your key ID number is:   ' .. button)
