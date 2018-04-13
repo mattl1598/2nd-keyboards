@@ -34,7 +34,7 @@ Menu, Tray, Icon, shell32.dll, 283 ; this changes the tray icon to a little keyb
 FileRead, key, C:\Users\mattl\Documents\GitHub\2nd-keyboards\keypressed.txt
 tippy(key) ; this function will just launch a quick tooltip that shows you what key you pressed. OPTIONAL.
 If (key = "0")
-msgbox 0
+Send !{F4}
 else if (key = "1")
 msgbox 1
 else if (key = "2")
@@ -42,7 +42,7 @@ msgbox 2
 else if (key = "3")
 msgbox 3
 else if (key = "4")
-msgbox 4
+Send ^#d Run {GitHub}
 else if (key = "5")
 msgbox 5
 else if (key = "6")
