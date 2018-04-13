@@ -32,7 +32,7 @@ Menu, Tray, Icon, shell32.dll, 283 ; this changes the tray icon to a little keyb
 
 ~F24::
 FileRead, key, C:\Users\mattl\Documents\GitHub\2nd-keyboards\keypressed.txt
-tippy(key) ; this function will just launch a quick tooltip that shows you what key you pressed. OPTIONAL.
+;tippy(key) ; this function will just launch a quick tooltip that shows you what key you pressed. OPTIONAL.
 If (key = "0")
 Send !{F4}
 else if (key = "1")
@@ -42,11 +42,11 @@ msgbox 2
 else if (key = "3")
 msgbox 3
 else if (key = "4")
-Send ^#d Run {GitHub}
+Send ^#{Left}
 else if (key = "5")
-msgbox 5
+Send ^#{Right}
 else if (key = "6")
-msgbox 6
+msgbox 6 Run
 else if (key = "7")
 msgbox 7
 else if (key = "8")
@@ -54,13 +54,13 @@ msgbox 8
 else if (key = "9")
 msgbox 9
 else if (key = "10")
-msgbox 10
+Reload
 else if (key = "11")
 msgbox 11
 else if (key = "12")
 msgbox 12
 else if (key = "13")
-msgbox 13
+msgbox 13 Run
 else if (key = "14")
 msgbox 14
 else if (key = "15")
@@ -98,10 +98,20 @@ msgbox 30
 else if (key = "31")
 msgbox 31
 
-
-Return ;from luamacros F24
+Return ;from luamacros F24+
+#If
 ;THE BLOCK OF CODE ABOVE is the original, simple Luamacros-dependant script.
-
+/*
+#IfWinActive ahk_exe atom.exe
+~F24::
+FileRead, key, C:\Users\mattl\Documents\GitHub\2nd-keyboards\keypressed.txt
+If (key = "1")
+WinActivate ahk_exe chrome.exe
+else if (key = "2")
+WinActivate ahk_exe GitHubDesktop.exe
+return
+#If
+*/
 
 ;;;ALL THE CODE BELOW CAN BE THE ACTUAL FUNCTIONS THAT YOU WANT TO CALL;;;
 
