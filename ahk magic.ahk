@@ -46,7 +46,7 @@ Send ^#{Left}
 else if (key = "5")
 Send ^#{Right}
 else if (key = "6")
-msgbox 6 Run
+msgbox 6
 else if (key = "7")
 msgbox 7
 else if (key = "8")
@@ -56,10 +56,10 @@ msgbox 9
 else if (key = "10")
 Reload
 else if (key = "11")
-msgbox 11
+DllCall("LockWorkStation")
 else if (key = "12")
 msgbox 12
-else if (key = "13")
+else if (key = "13")l
 msgbox 13 Run
 else if (key = "14")
 msgbox 14
